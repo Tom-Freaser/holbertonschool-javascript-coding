@@ -1,5 +1,12 @@
 #!/usr/bin/node
+// Write a string to a file
 const fs = require('fs');
-fs.writeFile(process.argv[2], process.argv[3], error => {
-  if (error) console.log(error);
+// Check if the file path is provided as an argument
+const filePath = process.argv[2];
+const content = process.argv[3];
+// Write the file
+fs.writeFile(filePath, content, 'utf8', (err) => {
+  if (err) {
+    console.error(err);
+  }
 });
